@@ -1,8 +1,9 @@
 <template>
   <div class="nav">
-    <router-link to="/"> <p>Home</p> </router-link> |
-    <router-link to="/recipes"> <p>Recipes</p></router-link> |
-    <router-link to="/freezing"> <p>Freezing</p></router-link>
+    <router-link class="nav-item" to="/"> Home</router-link> |
+    <p class="nav-item">Benefits</p>
+    <router-link class="nav-item" to="/recipes"> Recipes</router-link> |
+    <router-link class="nav-item" to="/freezing"> Freezing</router-link>
   </div>
   <router-view />
 </template>
@@ -34,11 +35,21 @@ body, html
 
 p
   font-size: 2rem
+  text-decoration: none
 
 .nav
   padding: 30px
   color: black
   display: flex
-  p
-    margin: 10px
+  position: absolute
+  right: 0px
+  z-index: 100
+.nav-item
+  text-decoration: none
+  font-size: 3rem
+  color: black
+  margin: 1rem
+  margin-right: 5rem
+  font-family: Nunito-regular
+  font-weight: bold
 </style>
