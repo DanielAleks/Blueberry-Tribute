@@ -4,6 +4,7 @@
     <p class="nav-item">Benefits</p>
     <router-link class="nav-item" to="/recipes"> Recipes</router-link> |
     <router-link class="nav-item" to="/freezing"> Freezing</router-link>
+    <i class="chevron-right" ></i>
   </div>
   <router-view />
 </template>

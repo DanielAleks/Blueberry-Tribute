@@ -6,7 +6,14 @@
       <button>View Recipe</button>
     </div>
     <img :src="recipes[0].image" alt="image" />
-    <div class="red-box-next" ></div>
+    <div class="red-box-next">
+      <button>
+        <i class="fas fa-chevron-left fa-5x"></i>
+      </button>
+      <button>
+        <i class="fas fa-chevron-right fa-5x"></i>
+      </button>
+    </div>
   </div>
 </template>
 
@@ -47,8 +54,13 @@
   position: absolute
   right: 55vw
   bottom: 0px
-</style>
+  button
+    background: none
+    height: 100%
+    width: 50%
+    border: none
 
+</style>
 
 <script>
 import Pie from "../assets/images/recipes/pie.jpeg";
