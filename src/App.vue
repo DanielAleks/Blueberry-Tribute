@@ -8,7 +8,14 @@
   <router-view />
 </template>
 
-<script lang="ts"></script>
+<script>
+export default {
+  name: "app",
+  data() {
+    return {};
+  },
+};
+</script>
 
 <style lang="sass">
 @font-face
@@ -36,6 +43,7 @@ body, html
 p
   font-size: 2rem
   text-decoration: none
+  font-family: Nunito-regular
 
 .nav
   padding: 30px
