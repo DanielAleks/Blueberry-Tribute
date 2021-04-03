@@ -1,16 +1,32 @@
 <template>
   <div class="benefits-omni-container" id="facts">
     <div class="benefits-container">
-      <div class="red-box">left</div>
+      <button class="red-box" @click="minusAccessor()">
+        <i class="fas fa-chevron-left fa-3x"></i>
+      </button>
+
       <div class="info-container">
-        <p class="title">{{ facts[accessor].title }}</p>
-        <p class="desc">{{ facts[accessor].desc }}</p>
+        <p class="title">{{ factsT[accessor] }}</p>
+        <p class="desc">{{ factsD[accessor] }}</p>
       </div>
-      <div class="red-box">right</div>
+
+      <button class="red-box" @click="addAccessor()">
+        <i class="fas fa-chevron-right fa-3x"></i>
+      </button>
     </div>
 
     <div class="red-nutrition-box">
       <p>Nutrition Facts</p>
+      <button @click="isNutrition = !isNutrition">
+        <i class="fas fa-chevron-up fa-3x"></i>
+      </button>
+    </div>
+    <div class="nutrition-left">
+      <p>hi</p>
+    </div>
+
+    <div class="nutrition-right">
+      <p>hi</p>
     </div>
   </div>
 </template>
@@ -22,12 +38,28 @@ export default {
     return {
       accessor: 0,
 
-      facts: [
-        {
-          title: "Maintaining healthy bones",
-          desc:
-            "Blueberries contain iron, phosphorous, calcium, magnesium, manganese, zinc, and vitamin K. Each of these is a component of bone. Adequate intake of these minerals and vitamins contributes to building and maintaining bone structure and strength. Iron and zinc fulfil crucial rolesTrusted Source in maintaining the strength and elasticity of bones and joints. Low intakes of vitamin K have been linked to a higher risk of bone fractureTrusted Source. However, adequate vitamin K intake improves calcium absorption and may reduce calcium loss.",
-        },
+      isNutrition: false,
+
+      factsT: [
+        "Maintaining healthy bones",
+        "Skin health",
+        "  Lowering blood pressure",
+        " Managing diabetes",
+        " Protecting against heart disease",
+        " Preventing cancer",
+        "Improving mental health",
+        "Healthy digestion, weight loss, and feeling full",
+      ],
+
+      factsD: [
+        "Blueberries contain iron, phosphorous, calcium, magnesium, manganese, zinc, and vitamin K. Each of these is a component of bone. Adequate intake of these minerals and vitamins contributes to building and maintaining bone structure and strength. Iron and zinc fulfil crucial rolesTrusted Source in maintaining the strength and elasticity of bones and joints. Low intakes of vitamin K have been linked to a higher risk of bone fractureTrusted Source. However, adequate vitamin K intake improves calcium absorption and may reduce calcium loss.",
+        "Collagen is the support system of the skin. It relies on vitamin C as an essential nutrient, and works to help prevent skin damage caused by the sun, pollution, and smoke. Vitamin C may also improve collagen’s ability to smooth wrinkles and enhance overall skin texture. One cup of blueberries provides 24 percent of the recommended daily allowance of vitamin C.",
+        "Maintaining low sodium levels is essential to keeping blood pressure at a healthful level. Blueberries are free of sodium. They contain potassium, calcium, and magnesium. Some studies have shown that diets low in these minerals are associated with higher blood pressure. Adequate dietary intake of these minerals is thought to help reduce blood pressure. However, other studies have counteracted these findings. For example, a 2015 studyTrusted Source of people with metabolic syndrome found that daily blueberry consumption for 6 weeks did not affect blood pressure levels.",
+        "Studies have found that people with type 1 diabetes who consume high-fiber diets have low blood glucose levels, and people with type 2 diabetes who consume the same may have improved blood sugar, lipid, and insulin levels. One cup of blueberries contributes 3.6 grams (g) of fiber. A large 2013 cohort studyTrusted Source published in the BMJ suggested that certain fruits may reduce the risk of type 2 diabetes in adults. Over the course of the study, 6.5 percent of the participants developed diabetes. However, the researchers found that consuming three servings per week of blueberries, grapes, raisins, apples or pears reduced the risk of type 2 diabetes by 7 percent.",
+        "Blueberries can help to preserve cardiovascular health. The fiber, potassium, folate, vitamin C, vitamin B6, and phytonutrient content in blueberries supports heart health. The absence of cholesterol from blueberries is also beneficial to the heart. Fiber content helps to reduce the total amount of cholesterol in the blood and decrease the risk of heart disease. Vitamin B6 and folate prevent the buildup of a compound known as homocysteine. Excessive buildup of homocysteine in the body can damage blood vessels and lead to heart problems. According to a study from the Harvard School of Public Health and the University of East Anglia, in the United Kingdom (U.K.) regular consumption of anthocyanins can reduce the risk of heart attack by 32 percent Trusted Sourcein young and middle-aged women. The study found that women who consumed at least three servings of blueberries or strawberries per week showed the best results.",
+        "Vitamin C, vitamin A, and the various phytonutrients in blueberries function as powerful antioxidants that may help protect cells against damage from disease-linked free radicals. Research suggests that antioxidants may inhibit tumor growth, decrease inflammation in the body, and help ward off or slow down esophageal, lung, mouth, pharynx, endometrial, pancreatic, prostate, and colon cancers. Blueberries also contain folate, which plays a role in DNA synthesis and repair. This can prevent the formation of cancer cellsTrusted Source due to mutations in the DNA.",
+        "Population-based studies have shown that consumption of blueberries is connected to slower cognitive declineTrusted Source in older women. Studies have also found that in addition to reducing the risk of cognitive damage, blueberries can also improve a person’s short-term memoryTrusted Source and motor coordination.",
+        "Blueberries help to prevent constipation and maintain regularity for a healthful digestive tract because of their fiber content. Dietary fiber is also commonly recognized as an important factor in weight loss and weight management by functioning as a “bulking agent” in the digestive system. High fiber foods increase satiety, or the feeling of being full, and reduce appetite. Feeling fuller for longer can reduce a person’s overall calorie intake.",
       ],
     };
   },
@@ -42,7 +74,6 @@ export default {
   justify-content: center
   position: relative
 
-
 .benefits-container
   display: flex
   justify-content: center
@@ -55,6 +86,13 @@ export default {
   padding: 5rem
   width: 50rem
 
+.nutrition-right .nutrition-left
+  bottom: 100px
+  right: 0px
+  position: absolute
+  p
+    font-size: 2rem
+
 .title
   font-size: 3rem
   font-weight: black
@@ -65,6 +103,7 @@ export default {
   height: 10rem
   background: red
   width: 10rem
+  border: none
 
 .red-nutrition-box
   height: 10rem
@@ -72,4 +111,13 @@ export default {
   width: 40rem
   position: absolute
   bottom: 0px
+  display: flex
+  justify-content: center
+  align-items: center
+  p
+    font-size: 2.5rem
+    margin-right: 20%
+  button
+    background: transparent
+    border: none
 </style>
