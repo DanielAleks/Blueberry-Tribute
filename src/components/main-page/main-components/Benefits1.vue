@@ -1,7 +1,7 @@
 <template>
   <div class="benefits-omni-container" id="facts">
     <div class="benefits-container">
-      <button class="red-box" @click="minusAccessor()">
+      <button class="red-box-left" @click="minusAccessor()">
         <i class="fas fa-chevron-left fa-3x"></i>
       </button>
 
@@ -10,23 +10,31 @@
         <p class="desc">{{ factsD[accessor] }}</p>
       </div>
 
-      <button class="red-box" @click="addAccessor()">
+      <button class="red-box-right" @click="plusAccessor()">
         <i class="fas fa-chevron-right fa-3x"></i>
       </button>
     </div>
 
-    <div class="red-nutrition-box">
+    <div @click="isNutrition = !isNutrition" class="red-nutrition-box">
       <p>Nutrition Facts</p>
-      <button @click="isNutrition = !isNutrition">
+      <button>
         <i class="fas fa-chevron-up fa-3x"></i>
       </button>
     </div>
-    <div class="nutrition-left">
-      <p>hi</p>
-    </div>
+    <div v-if="isNutrition">
+      <div class="nutrition-left">
+        <p class="nutrition-title">{{ nutritionTitle }}</p>
+        <p v-for="(nutritionLeft, index) in nutritionLeft" :key="index">
+          {{ nutritionLeft }}
+        </p>
+      </div>
 
-    <div class="nutrition-right">
-      <p>hi</p>
+      <div class="nutrition-right">
+        <p class="nutrition-title">{{ nutritionTitle }}</p>
+        <p v-for="(nutritionRight, index) in nutritionRight" :key="index">
+          {{ nutritionRight }}
+        </p>
+      </div>
     </div>
   </div>
 </template>
@@ -37,8 +45,41 @@ export default {
   data() {
     return {
       accessor: 0,
-
       isNutrition: false,
+      nutritionTitle: "Serving Size: 1 Cup",
+
+      minusAccessor() {
+        if (this.accessor > 0) {
+          this.accessor -= 1;
+        }
+        null;
+      },
+      plusAccessor() {
+        if (this.accessor < 7) {
+          this.accessor += 1;
+        }
+        null;
+      },
+
+      nutritionLeft: [
+        "84 calories",
+        "0 g of cholesterol",
+        "1.1 g of protein",
+        "0.49 g of fat",
+        "21.45 g of carbohydrate",
+        "3.6 g of dietary fiber",
+        "14.74 g of total sugars",
+      ],
+
+      nutritionRight: [
+        "9 milligrams (mg) calcium",
+        "0.41 mg of iron",
+        "114 mg of potassium",
+        "9 mg of magnesium",
+        "18 mg of phosphorus",
+        "1 mg of sodium",
+        "0.24 mg of zinc",
+      ],
 
       factsT: [
         "Maintaining healthy bones",
@@ -86,12 +127,17 @@ export default {
   padding: 5rem
   width: 50rem
 
-.nutrition-right .nutrition-left
+.nutrition-left, .nutrition-right
   bottom: 100px
-  right: 0px
   position: absolute
   p
-    font-size: 2rem
+    margin: .5rem
+
+.nutrition-left
+  left: 100px
+
+.nutrition-right
+  right: 100px
 
 .title
   font-size: 3rem
@@ -99,21 +145,33 @@ export default {
   text-align: center
 .desc
 
-.red-box
+.nutrition-title
+  font-family: nunito-bold
+
+.red-box-left, .red-box-right
   height: 10rem
-  background: red
+  background: linear-gradient(180deg, rgba(255,63,63,1) 0%, #ff6e6e 50%, rgba(255,63,63,1) 100%)
   width: 10rem
   border: none
 
+.red-box-left
+  border-top-left-radius: 10px
+  border-bottom-left-radius: 10px
+.red-box-right
+  border-bottom-right-radius: 10px
+  border-top-right-radius: 10px
+
 .red-nutrition-box
-  height: 10rem
-  background: red
-  width: 40rem
+  height: 8rem
+  background: linear-gradient(180deg, rgba(255,63,63,1) 0%, #ff6e6e 50%, rgba(255,63,63,1) 100%)
+  width: 35rem
   position: absolute
   bottom: 0px
   display: flex
   justify-content: center
   align-items: center
+  border-top-right-radius: 10px 
+  border-top-left-radius: 10px 
   p
     font-size: 2.5rem
     margin-right: 20%
