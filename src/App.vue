@@ -1,10 +1,14 @@
 <template>
   <!-- <p v-if= >Hello</p> -->
-  <i @click="navModal = !navModal" class="fas fa-bars fa-5x sandwich-nav"></i>
+  <i @click="navModal = !navModal" class="fas fa-bars fa-4x sandwich-nav"></i>
+  <div v-if="navModal" class="mobile-nav">
+    <router-link class="mobile-nav-item" to="/"> Home</router-link> |
+    <router-link class="mobile-nav-item" to="/recipes"> Recipes</router-link> |
+    <router-link class="mobile-nav-item" to="/freezing"> Freezing</router-link>
+  </div>
+
   <div class="nav">
-    <router-link class="nav-item" to="/"> Home</router-link>
-    |
-    <!-- <p class="nav-item">Benefits</p> -->
+    <router-link class="nav-item" to="/"> Home</router-link> |
     <router-link class="nav-item" to="/recipes"> Recipes</router-link> |
     <router-link class="nav-item" to="/freezing"> Freezing</router-link>
   </div>
@@ -44,14 +48,29 @@ body, html
   padding: 0px !important
   background: #fffbe7
   font-size: 62.5%
+  overflow-x: hidden
 
 p
   font-size: 2rem
   text-decoration: none
   font-family: Nunito-regular
 
+.mobile-nav
+  width: 100vw
+  height: 15rem
+  background: red
+  position: absolute
+  top: 7rem
+
 .sandwich-nav
   position: absolute
+  display: none
+  z-index: 1
+  
+  @media (max-width: 600px)
+    display: flex
+    top: 3rem
+    right: 4rem
 
 .nav
   padding: 30px
@@ -60,6 +79,8 @@ p
   position: absolute
   right: 0px
   z-index: 100
+  @media (max-width: 600px)
+    display: none
 .nav-item
   text-decoration: none
   font-size: 3rem
