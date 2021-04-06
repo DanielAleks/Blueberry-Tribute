@@ -6,11 +6,20 @@
       <button @click="recipeModal = !recipeModal">View Recipe</button>
     </div>
     <img :src="recipes[accessor].image" alt="image" />
-    <div class="red-box-next">
+    <div class="blue-box-next">
       <button @click="minusAccessor()">
         <i class="fas fa-chevron-left fa-3x"></i>
       </button>
       <button @click="addAccessor()">
+        <i class="fas fa-chevron-right fa-3x"></i>
+      </button>
+    </div>
+
+    <div class="blue-arrows">
+      <button class="left-arrow" @click="minusAccessor()">
+        <i class="fas fa-chevron-left fa-3x"></i>
+      </button>
+      <button class="right-arrow" @click="addAccessor()">
         <i class="fas fa-chevron-right fa-3x"></i>
       </button>
     </div>
@@ -58,7 +67,7 @@ export default {
   name: "recipes",
   data() {
     return {
-      accessor: 0,
+      accessor: 5,
       recipeModal: false,
 
       minusAccessor() {
@@ -162,7 +171,7 @@ export default {
         },
         {
           image: PieBars,
-          title: "Blueberry Pie Bars",
+          title: "Blueberry PieBars",
           desc:
             "Blueberry Pie Bars are the perfect easy treat to throw together for the pie lovers in your life. No rolling pin required!",
           ingredients: [
@@ -371,8 +380,6 @@ export default {
     border-radius: 10px
     font-size: 2rem
     font-family: nunito-bold
-  button:active
-    background: #1966FF
 .recipe-title
   font-family: Rubik
   font-weight: 900
@@ -380,7 +387,7 @@ export default {
   width: 30vw
 .recipe-desc
   width: 50rem
-.red-box-next
+.blue-box-next
   border-top-right-radius: 10px
   border-top-left-radius: 10px
   height: 8rem
@@ -395,4 +402,54 @@ export default {
     height: 100%
     width: 50%
     border: none
+.blue-arrows
+  display: none
+@media (max-width: 1400px)
+  .recipe-container
+    img
+      height: 87vh
+      width: 50vw
+@media (max-width: 900px)
+  .recipe-container
+    img
+      border-top-left-radius: 0px
+      height: 40vh
+      width: 100%
+      top: 10vh
+  .blue-box-next
+    display: none
+  .blue-arrows
+    display: flex
+    top: 45vh
+    z-index: 10
+    position: absolute
+    width: 100%
+    button
+      position: absolute
+      height: 8rem
+      width: 15rem
+      border: none
+      outline: none
+      background: #4382ff
+  .left-arrow
+    left: 0px
+    border-top-right-radius: 100px
+    border-bottom-right-radius: 100px
+  .right-arrow
+    border-top-left-radius: 100px
+    border-bottom-left-radius: 100px
+    right: 0px
+  .recipe-title
+    font-family: Rubik
+    font-weight: 900
+    font-size: 8rem
+    margin: 0px
+  .recipe-desc
+    width: 50rem
+  .recipe-info
+    width: 100%
+    align-items: flex-start
+    position: absolute
+    left: 15vw
+    bottom: 15vw
 </style>

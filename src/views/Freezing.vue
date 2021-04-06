@@ -65,21 +65,18 @@ export default {
       freezeSteps: [
         {
           image: Pan,
-          accessor: 0,
           title: "Sorting",
           desc:
             "Sort the blueberries: Spread the blueberries on a rimmed baking sheet in an even layer. Remove any stems and any shriveled or moldy blueberries. You can skip washing because the blueberries have a coat that keeps them fresh.",
         },
         {
           image: Ziplock,
-          accessor: 1,
           title: "Freezing",
           desc:
             "Freeze: Freeze the blueberries on the baking sheet until solid, about 4 hours. Bag and label: Transfer the blueberries from the baking sheet to a zip-top freezer bag. Label the bag with the date and return to the freezer.",
         },
         {
           image: Wash,
-          accessor: 2,
           title: "Preparing",
           desc:
             "Rinse and thaw: Rinse frozen blueberries before using. Frozen blueberries can be sprinkled directly on yogurt or in oatmeal, or even baked in muffins. Frozen berries can be thawed quickly in a bowl of room temperature water.",
