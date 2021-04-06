@@ -15,15 +15,28 @@
       </button>
     </div>
 
-    <div class="recipe-modal-container" :v-show="recipeModal">
-      <p v-for="(ingredients, index) in recipes[0].ingredients" :key="index">
-        {{ ingredients }}
-      </p>
-      <div v-for="(ingredients, index) in recipes[0].steps" :key="index">
-        <p>Step: {{ index + 1 }}</p>
-        <p>
-          {{ recipes[0].steps }}
+    <div
+      @click="recipeModal = false"
+      class="recipe-modal-overlay"
+      v-show="recipeModal"
+    ></div>
+    <div class="recipe-modal-container" v-show="recipeModal">
+      <div class="ingredients-container">
+        <p
+          class="ingredients"
+          v-for="(ingredients, index) in recipes[accessor].ingredients"
+          :key="index"
+        >
+          •{{ ingredients }}
         </p>
+      </div>
+      <div class="steps-container">
+        <div v-for="(recipes, index) in recipes[accessor].steps" :key="index">
+          <p class="step">Step: {{ index + 1 }}</p>
+          <p class="recipe">
+            {{ recipes }}
+          </p>
+        </div>
       </div>
     </div>
   </div>
@@ -62,7 +75,7 @@ export default {
       },
 
       recipes: [
-        { 
+        {
           image: Pie,
           title: "Blueberry Pie",
           desc:
@@ -82,12 +95,6 @@ export default {
             "Line pie dish with one pie crust. Pour berry mixture into the crust, and dot with butter. Cut remaining pastry into 1/2 - 3/4 inch wide strips, and make lattice top. Crimp and flute edges.",
             "Bake pie on lower shelf of oven for about 50 minutes, or until crust is golden brown.",
           ],
-        },
-        {
-          image: Smoothie,
-          title: "Blueberry Smoothie",
-          desc: "A delicious way to use up your blueberries!",
-          recipe: "hi",
         },
         {
           image: Smoothie,
@@ -312,45 +319,78 @@ export default {
   display: flex
   align-items: center
   img
-    height: 80rem
-    width: 120rem
+    height: 87vh
+    width: 60vw
+    border-top-left-radius: 50px
     background-position: 50% 50%
     object-fit: cover
     position: absolute
     right: 0px
     bottom: 0px
-
+.recipe-modal-overlay
+  height: 100vh
+  width: 100vw
+  background: rgba(0, 0, 0, .3)
+  position: absolute
+  z-index: 101
 .recipe-modal-container
-  height: 70rem
-  width: 130rem
+  max-height: 100%
+  padding-top: 5rem
+  padding-bottom: 5rem
+  width: 110rem
   left: 20vw
-  background: rgba(255, 247, 204, .95) !important
+  z-index: 102
+  background: rgba(67, 130, 255, .95)
   position: absolute
   border-radius: 20px
+  display: flex
+  justify-content: center
+  align-items: center
+.ingredients-container
+  width: 28%
+  margin-left: 2%
+.steps-container
+  width: 65%
+.step
+  margin-top: 10px
+  margin-bottom: 0px
+  font-family: nunito-bold
+.recipe
+  margin: 0px
+.ingredients
+  margin: 1rem
 .recipe-info
+  margin-left: 5rem
+  position: relative
+  z-index: 1
   button
     height: 7rem
     width: 15rem
-    background: red
+    background: #4382FF
     border: none
     border-radius: 10px
     font-size: 2rem
     font-family: nunito-bold
+  button:active
+    background: #1966FF
 .recipe-title
   font-family: Rubik
   font-weight: 900
   font-size: 10rem
-  width: 40vw
+  width: 30vw
 .recipe-desc
   width: 50rem
 .red-box-next
+  border-top-right-radius: 10px
+  border-top-left-radius: 10px
   height: 8rem
   width: 20rem
-  background: red
+  background: #4382FF
   position: absolute
   right: 55vw
   bottom: 0px
   button
+    outline: none
     background: none
     height: 100%
     width: 50%
