@@ -58,8 +58,9 @@ export default {
 .freeze-info
   width: 40rem
   height: 20rem
-  margin: 10rem
-  margin-bottom: 30rem
+  margin-right: 5vw
+  margin-left: 5vw
+  margin-bottom: 25vh
   font-family: Nunito-regular
   img
     height: 100%
@@ -67,6 +68,16 @@ export default {
     border-radius: 10px
     object-fit: cover
 
-.title
-.desc
+@media (max-width: 1500px)
+  .freeze-info
+    margin-right: 2vw
+    margin-left: 2vw
+@media (max-width: 1250px)
+  .freeze-info
+    margin-right: 3vw
+    margin-left: 3vw
+    width: 30rem
+
+@media (max-width: 800px)
+  .h
 </style>

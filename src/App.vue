@@ -1,6 +1,9 @@
 <template>
+  <!-- <p v-if= >Hello</p> -->
+  <i @click="navModal = !navModal" class="fas fa-bars fa-5x sandwich-nav"></i>
   <div class="nav">
-    <router-link class="nav-item" to="/"> Home</router-link> |
+    <router-link class="nav-item" to="/"> Home</router-link>
+    |
     <!-- <p class="nav-item">Benefits</p> -->
     <router-link class="nav-item" to="/recipes"> Recipes</router-link> |
     <router-link class="nav-item" to="/freezing"> Freezing</router-link>
@@ -12,7 +15,9 @@
 export default {
   name: "app",
   data() {
-    return {};
+    return {
+      navModal: false,
+    };
   },
 };
 </script>
@@ -44,6 +49,9 @@ p
   font-size: 2rem
   text-decoration: none
   font-family: Nunito-regular
+
+.sandwich-nav
+  position: absolute
 
 .nav
   padding: 30px
