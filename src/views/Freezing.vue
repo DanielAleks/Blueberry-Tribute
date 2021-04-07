@@ -51,15 +51,15 @@ export default {
   data() {
     return {
       accessor: 0,
-      x: -105,
+      x: -60,
       imgHandler(index) {
         this.accessor = index;
         if (index === 0) {
-          this.x = -100;
+          this.x = -60;
         } else if (index === 1) {
-          this.x = -200;
+          this.x = -170;
         } else if (index === 2) {
-          this.x = -300;
+          this.x = -260;
         }
       },
       freezeSteps: [
@@ -89,7 +89,7 @@ export default {
 
 <style lang="sass">
 .freezing-container
-  display: flex
+  display: flex 
   justify-content: center
   align-items: center
   height: 100vh
@@ -100,12 +100,12 @@ export default {
   .freezing-container
   .Mfreeze-info
     display: block
-    width: 40rem
+    width: 90%
     margin-right: 5vw
     margin-left: 5vw
     font-family: Nunito-regular
   .desc
-    width: 80%
+    width: 50%
     margin-left: 10%
     margin-right: 10%
   .title-desc-container
@@ -114,21 +114,17 @@ export default {
     justify-content: center
     align-items: center
     transition: transform 1s
-    margin-left: -50px
-    width: 70%
 
   .freeze-img-container
     display: flex
     justify-content: center
-    margin-left: -10%
     margin-top: 10rem
-    width: 120%
     img
       @media (max-width: 900px)
         transition: filter 1s
         margin: 1.5rem
         height: 20rem
-        width: 50%
+        width: 60rem
         border-radius: 10px
         object-fit: cover
         cursor: pointer

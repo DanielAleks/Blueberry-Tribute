@@ -101,14 +101,12 @@
   .tribute-text, .tribute-blueberry
     font-size: 8rem
 @media (max-width: 750px)
-  .blueberries-bg
   .tribute-title-container
     right: auto
     left: 100px
   .tribute-text, .tribute-blueberry
     font-size: 7rem
 @media (max-width: 650px)
-  .tribute-text, .tribute-blueberry
   .tribute-title-container
     left: 50px
 @media (max-width: 550px)

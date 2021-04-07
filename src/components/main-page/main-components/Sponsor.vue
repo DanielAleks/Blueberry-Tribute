@@ -38,7 +38,8 @@ export default {};
     z-index: 1
   .inner-bg
     position: absolute
-    background: #4382FF
+    background: linear-gradient(180deg, rgba(67,130,255,.95) 0%, rgba(91,146,255,.95) 50%, rgba(67,130,255,.95) 100%)
+    box-shadow: 2px 2px 8px 0px black
     opacity: .95
     height: 80%
     width: 100%

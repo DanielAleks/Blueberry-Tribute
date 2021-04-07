@@ -70,7 +70,7 @@ export default {
   name: "recipes",
   data() {
     return {
-      accessor: 5,
+      accessor: 3,
       recipeModal: false,
 
       minusAccessor() {
@@ -335,7 +335,6 @@ export default {
 .recipe-container
   height: 100vh
   width: 100%
-  position: absolute
   display: flex
   align-items: center
   img
@@ -360,7 +359,8 @@ export default {
   width: 110rem
   left: 20vw
   z-index: 102
-  background: rgba(67, 130, 255, .95)
+  background: linear-gradient(180deg, rgba(67,130,255,.95) 0%, rgba(91,146,255,.95) 50%, rgba(67,130,255,.95) 100%)
+  box-shadow: 2px 2px 8px 0px black
   position: absolute
   border-radius: 20px
   display: flex
@@ -400,7 +400,8 @@ export default {
   button
     height: 7rem
     width: 15rem
-    background: #4382FF
+    background: linear-gradient(180deg, rgba(67,130,255,1) 0%, rgba(91,146,255,1) 50%, rgba(67,130,255,1) 100%)
+    box-shadow: 2px 2px 8px 0px black
     border: none
     border-radius: 10px
     font-size: 2rem
@@ -426,7 +427,8 @@ export default {
   border-top-left-radius: 10px
   height: 8rem
   width: 20rem
-  background: #4382FF
+  background: linear-gradient(180deg, rgba(67,130,255,1) 0%, rgba(91,146,255,1) 50%, rgba(67,130,255,1) 100%)
+  box-shadow: 2px 2px 8px 0px black
   position: absolute
   right: 55vw
   bottom: 0px
@@ -466,7 +468,8 @@ export default {
       width: 15rem
       border: none
       outline: none
-      background: #4382ff
+      background: linear-gradient(180deg, rgba(67,130,255,1) 0%, rgba(91,146,255,1) 50%, rgba(67,130,255,1) 100%)
+      box-shadow: 2px 2px 8px 0px black
   .left-arrow
     left: 0px
     border-top-right-radius: 100px
