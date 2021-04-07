@@ -123,10 +123,8 @@ export default {
   cursor: pointer
   z-index: 1
   outline: none
-
 .button-left
   left: 0px
-
 .button-right
   right: 0px
 

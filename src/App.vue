@@ -38,7 +38,7 @@ export default {
   src: url('./assets/fonts/Nunito-Regular.ttf')
 @font-face
   font-family: "Rubik"
-  src: url('./assets/fonts/Rubik-VariableFont_wght.ttf')
+  src: url('./assets/fonts/static/Rubik-Black.ttf')
 @font-face
   font-family: "Rubik-Italic"
   src: url('./assets/fonts/Rubik-Italic-VariableFont_wght.ttf')
