@@ -32,12 +32,12 @@ export default {
       translateLeft() {
         if (this.x < 0) {
           this.x += 100;
-        } else this.x = -700
+        } else this.x = -700;
       },
       translateRight() {
         if (this.x > -700) {
-        this.x -= 100;
-        } else this.x = 0
+          this.x -= 100;
+        } else this.x = 0;
       },
 
       facts: [
@@ -59,12 +59,12 @@ export default {
         {
           title: " Managing diabetes",
           desc:
-            "Studies have found that people with type 1 diabetes who consume high-fiber diets have low blood glucose levels, and people with type 2 diabetes who consume the same may have improved blood sugar, lipid, and insulin levels. One cup of blueberries contributes 3.6 grams (g) of fiber. A large 2013 cohort studyTrusted Source published in the BMJ suggested that certain fruits may reduce the risk of type 2 diabetes in adults. Over the course of the study, 6.5 percent of the participants developed diabetes. However, the researchers found that consuming three servings per week of blueberries, grapes, raisins, apples or pears reduced the risk of type 2 diabetes by 7 percent.",
+            "Studies have found that people with type 1 diabetes who consume high-fiber diets have low blood glucose levels, and people with type 2 diabetes who consume the same may have improved blood sugar, lipid, and insulin levels. One cup of blueberries contributes 3.6 grams (g) of fiber. A large 2013 cohort studyTrusted Source published in the BMJ suggested that certain fruits may reduce the risk of type 2 diabetes in adults. Researchers found that consuming three servings per week of blueberries reduced the risk of type 2 diabetes by 7 percent.",
         },
         {
           title: " Protecting against heart disease",
           desc:
-            "Blueberries can help to preserve cardiovascular health. The fiber, potassium, folate, vitamin C, vitamin B6, and phytonutrient content in blueberries supports heart health. The absence of cholesterol from blueberries is also beneficial to the heart. Fiber content helps to reduce the total amount of cholesterol in the blood and decrease the risk of heart disease. Vitamin B6 and folate prevent the buildup of a compound known as homocysteine. Excessive buildup of homocysteine in the body can damage blood vessels and lead to heart problems. According to a study from the Harvard School of Public Health and the University of East Anglia, in the United Kingdom (U.K.) regular consumption of anthocyanins can reduce the risk of heart attack by 32 percent Trusted Sourcein young and middle-aged women. The study found that women who consumed at least three servings of blueberries or strawberries per week showed the best results.",
+            "Blueberries can help to preserve cardiovascular health. The fiber, potassium, folate, vitamin C, vitamin B6, and phytonutrient content in blueberries supports heart health. The absence of cholesterol from blueberries is also beneficial to the heart. Fiber content helps to reduce the total amount of cholesterol in the blood and decrease the risk of heart disease. Vitamin B6 and folate prevent the buildup of a compound known as homocysteine. Excessive buildup of homocysteine in the body can damage blood vessels and lead to heart problems.",
         },
         {
           title: " Preventing cancer",
@@ -89,7 +89,7 @@ export default {
 
 <style lang="sass">
 .benefits-omni-container
-  height: 80vh
+  height: 70rem
   width: 100%
   display: flex
   justify-content: flex-start
@@ -130,21 +130,12 @@ export default {
 .button-right
   right: 0px
 
-.red-nutrition-box
-  height: 8rem
-  background: linear-gradient(180deg, rgba(255,63,63,1) 0%, #ff6e6e 50%, rgba(255,63,63,1) 100%)
-  width: 35rem
-  position: absolute
-  bottom: 0px
-  display: flex
-  justify-content: center
-  align-items: center
-  border-top-right-radius: 10px
-  border-top-left-radius: 10px
-  p
-    font-size: 2.5rem
-    margin-right: 20%
-  button
-    background: transparent
-    border: none
+@media (max-width: 900px)
+  .button-left, .button-right
+    width: 10rem
+  .info-container
+    width: 90vw
+    margin-left: 5vw
+    margin-right: 5vw
 </style>
+

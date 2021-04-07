@@ -9,7 +9,7 @@
 <script lang="ts">
 import { Options, Vue } from "vue-class-component";
 import Sponsor from "./main-components/Sponsor.vue";
-import Benefits from "./main-components/Benefits1.vue";
+import Benefits from "./main-components/Benefits.vue";
 import Home from "./main-components/Home.vue";
 
 @Options({

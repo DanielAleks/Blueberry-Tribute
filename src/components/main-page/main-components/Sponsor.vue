@@ -45,6 +45,7 @@ export default {};
   position: absolute
   height: 6rem
   width: 10rem
+  cursor: pointer
 .yokes
   bottom: 15%
   left: 5%
