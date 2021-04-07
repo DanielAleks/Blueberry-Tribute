@@ -30,6 +30,9 @@
       v-show="recipeModal"
     ></div>
     <div class="recipe-modal-container" v-show="recipeModal">
+      <div class="close-x" @click="recipeModal = false">
+        <i class="far fa-times-circle fa-4x"></i>
+      </div>
       <div class="ingredients-container">
         <p
           class="ingredients"
@@ -321,6 +324,14 @@ export default {
 </script>
 
 <style lang="sass">
+.close-x
+  position: absolute
+  top: 1rem
+  right: 1rem
+  padding: 1rem
+  display: flex
+  justify-content: flex-start
+  align-items: flex-start
 .recipe-container
   height: 100vh
   width: 100%
@@ -355,6 +366,20 @@ export default {
   display: flex
   justify-content: center
   align-items: center
+  @media (max-width: 1500px)
+    width: 90rem
+  @media (max-width: 1250px)
+    left: 10vw
+  @media (max-width: 1100px)
+    width: 80rem
+    left: 10%
+  @media (max-width: 900px)
+    width: 75vw
+    left: 12%
+  @media (max-width: 750px)
+    width: 100vw
+    left: 0%
+
 .ingredients-container
   width: 28%
   margin-left: 2%
@@ -369,7 +394,7 @@ export default {
 .ingredients
   margin: 1rem
 .recipe-info
-  margin-left: 5rem
+  padding-left: 5rem
   position: relative
   z-index: 1
   button
@@ -386,7 +411,16 @@ export default {
   font-size: 10rem
   width: 30vw
 .recipe-desc
-  width: 50rem
+  width: 30vw
+
+@media (max-width: 1400px)
+  .recipe-desc
+    width: 40vw
+
+@media (max-width: 1050px)
+  .recipe-title
+    font-size: 8rem
+
 .blue-box-next
   border-top-right-radius: 10px
   border-top-left-radius: 10px
@@ -405,6 +439,8 @@ export default {
 .blue-arrows
   display: none
 @media (max-width: 1400px)
+  .blue-box-next
+    right: 40vw
   .recipe-container
     img
       height: 87vh
@@ -413,14 +449,14 @@ export default {
   .recipe-container
     img
       border-top-left-radius: 0px
-      height: 40vh
+      height: 40rem
       width: 100%
-      top: 10vh
+      top: 8rem
   .blue-box-next
     display: none
   .blue-arrows
     display: flex
-    top: 45vh
+    top: 42rem
     z-index: 10
     position: absolute
     width: 100%
@@ -450,6 +486,18 @@ export default {
     width: 100%
     align-items: flex-start
     position: absolute
-    left: 15vw
-    bottom: 15vw
+    padding-left: 20vw
+    display: block
+    background: #FFFBE7
+    bottom: 4em
+@media (max-width: 700px)
+  .recipe-info
+    padding-left: 5vw
+    bottom: 2rem
+@media (max-width: 600px)
+  .recipe-desc
+@media (max-width: 600px)
+  .recipe-desc
+    width: 45rem
+  .recipe-title
 </style>
