@@ -66,8 +66,7 @@ p
   position: absolute
   display: none
   z-index: 1
-  
-  @media (max-width: 600px)
+  @media (max-width: 900px)
     display: flex
     top: 3rem
     right: 4rem
@@ -79,11 +78,11 @@ p
   position: absolute
   right: 0px
   z-index: 100
-  @media (max-width: 600px)
+  @media (max-width: 900px)
     display: none
 .nav-item
   text-decoration: none
-  font-size: 3rem
+  font-size: 2.5rem
   color: black
   margin: 1rem
   margin-right: 5rem

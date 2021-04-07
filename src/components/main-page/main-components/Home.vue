@@ -16,13 +16,13 @@
   width: 100%
   position: relative
 .blueberries-bg
-  background: url('../../../assets/images/blueBest.png')
-  height: 85vh
-  width: 68%
+  background: url('../../../assets/images/newBlue.png')
+  height: 90vh
+  width: 140%
   position: absolute
   z-index: 0
-  right: 10vw
-  transform: rotate(180deg)
+  top: 0px
+  right: -63vw
   background-size: cover
   background-position: 50% 50%
 .tribute-title-container
