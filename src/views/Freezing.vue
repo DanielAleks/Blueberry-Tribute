@@ -6,7 +6,7 @@
       class="freeze-info"
     >
       <img :src="freezeStep.image" alt="image" />
-      <p class="freezing-title">{{ freezeStep.title }}</p>
+      <p class="title">{{ freezeStep.title }}</p>
       <p class="freezing-desc">{{ freezeStep.desc }}</p>
     </div>
 
@@ -18,7 +18,7 @@
           :style="{ transform: `translate(${x}%)` }"
           class="title-desc-container"
         >
-          <p class="freezing-title">{{ freezeStep.title }}</p>
+          <p class="title">{{ freezeStep.title }}</p>
           <p @click="imgHandler(index)" class="desc">{{ freezeStep.desc }}</p>
         </div>
       </div>
