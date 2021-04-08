@@ -34,6 +34,13 @@
   height: 100vh
   width: 100%
   position: relative
+
+@keyframes fade-in-img
+  0%
+    opacity: 0
+  100%
+    opacity: 1
+
 .blueberries-bg
   background: url('../../../assets/images/png.png')
   height: 90rem
@@ -43,6 +50,8 @@
   right: 0px
   background-size: cover
   background-position: 50% 50%
+  animation: fade-in-img 1s forwards
+  opacity: 0
   @media (max-width: 1650px)
     right: -100px
   @media (max-width: 1550px)
@@ -64,6 +73,7 @@
     margin: 0px
 .tribute-text
   font-size: 12rem
+  animation: slide-right-mainHeader 1s forwards
 
 .tribute-blueberry
   background-image: url('../../../assets/images/blueberriesSponsor.jpg')
@@ -72,6 +82,15 @@
   background-size: cover
   width: 130%
   font-size: 12rem
+  animation: slide-right-mainHeader 1.3s forwards
+
+@keyframes slide-right-mainHeader
+  0%
+    opacity: 0
+    transform: translateX(-30rem) skewX(5deg) 
+  100%
+    opacity: 1
+    transform: translateX(0rem)
 
 @media (max-width: 1400px)
   .tribute-title-container

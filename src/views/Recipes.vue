@@ -325,6 +325,7 @@ export default {
 
 <style lang="sass">
 .close-x
+  cursor: pointer
   position: absolute
   top: 1rem
   right: 1rem
@@ -346,6 +347,17 @@ export default {
     position: absolute
     right: 0px
     bottom: 0px
+    animation: slide-img-right 1s forwards
+    opacity: 0
+
+@keyframes slide-img-right
+  0%
+    transform: translateX(10rem)
+    opacity: 0
+  100%
+    transform: translateX(0rem)
+    opacity: 1
+
 .recipe-modal-overlay
   height: 100vh
   width: 100vw
@@ -406,13 +418,30 @@ export default {
     border-radius: 10px
     font-size: 2rem
     font-family: nunito-bold
+    animation: slide-left 1.6s
+    cursor: pointer
+
+@keyframes slide-left
+  0%
+    transform: translateX(-10rem)
+  100%
+    transform: translateX(0rem)
+@keyframes slide-button-up
+  0%
+    transform: translateY(10rem)
+  100%
+    transform: translateY(0rem)
+
 .recipe-title
   font-family: Rubik
   font-weight: 900
   font-size: 10rem
   width: 30vw
+  animation: slide-left 1s
+
 .recipe-desc
   width: 30vw
+  animation: slide-left 1.2s
 
 @media (max-width: 1400px)
   .recipe-desc
@@ -432,7 +461,9 @@ export default {
   position: absolute
   right: 55vw
   bottom: 0px
+  animation: slide-button-up 1s
   button
+    cursor: pointer
     outline: none
     background: none
     height: 100%
@@ -443,17 +474,15 @@ export default {
 @media (max-width: 1400px)
   .blue-box-next
     right: 40vw
-  .recipe-container
     img
       height: 87vh
       width: 50vw
 @media (max-width: 900px)
-  .recipe-container
-    img
-      border-top-left-radius: 0px
-      height: 40rem
-      width: 100%
-      top: 8rem
+  img
+    border-top-left-radius: 0px
+    height: 40rem
+    width: 100%
+    top: 8rem
   .blue-box-next
     display: none
   .blue-arrows

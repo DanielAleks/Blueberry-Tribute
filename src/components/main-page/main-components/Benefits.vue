@@ -135,5 +135,7 @@ export default {
     width: 90vw
     margin-left: 5vw
     margin-right: 5vw
+  .desc
+    width: 72vw !important
 </style>
 

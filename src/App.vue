@@ -104,7 +104,14 @@ p
     right: 4rem
     z-index: 10000
 
+@keyframes slide-down-nav
+  0%
+    transform: translateY(-20rem)
+  100%
+    transform: translateY(0rem)
+
 .nav
+  animation: slide-down-nav 1s
   position: absolute
   color: black
   padding: 10px

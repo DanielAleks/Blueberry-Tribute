@@ -89,11 +89,13 @@ export default {
 
 <style lang="sass">
 .freezing-container
-  display: flex 
+  display: flex
   justify-content: center
   align-items: center
   height: 100vh
   width: 100%
+  animation: slide-up 1.5s forwards
+  opacity: 0
 .Mfreeze-info
   display: none
 @media (max-width: 900px)
@@ -135,6 +137,14 @@ export default {
       @media (max-width: 600px)
         width: 33%
 
+@keyframes slide-up
+  0%
+    transform: translateY(5rem)
+    opacity: 0
+  100%
+    transform: translateY(0rem)
+    opacity: 1
+
 .freeze-info
   width: 40rem
   height: 20rem
@@ -142,6 +152,7 @@ export default {
   margin-left: 5vw
   margin-bottom: 25vh
   font-family: Nunito-regular
+
   @media (max-width: 900px)
     display: none
   img
