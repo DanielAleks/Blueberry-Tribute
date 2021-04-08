@@ -2,10 +2,9 @@
   <div style="position: relative; height: 0px">
     <i @click="navModal = !navModal" class="fas fa-bars fa-4x sandwich-nav"></i>
     <div v-if="navModal" class="mobile-nav">
-      <router-link class="nav-item" to="/"> Home</router-link> |
-      <router-link class="nav-item" to="/recipes"> Recipes</router-link> |
-      <router-link class="nav-item" to="/freezing"> Freezing</router-link>
-      >
+      <router-link class="mobile-nav-item" to="/"> Home</router-link> |
+      <router-link class="mobile-nav-item" to="/recipes"> Recipes</router-link> |
+      <router-link class="mobile-nav-item" to="/freezing"> Freezing</router-link>
     </div>
   </div>
 
