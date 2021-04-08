@@ -76,14 +76,12 @@ export default {
       minusAccessor() {
         if (this.accessor > 0) {
           this.accessor -= 1;
-        }
-        this.accessor;
+        } else this.accessor = 9;
       },
       addAccessor() {
         if (this.accessor < 9) {
           this.accessor += 1;
-        }
-        this.accessor;
+        } else this.accessor = 0;
       },
 
       recipes: [
