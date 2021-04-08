@@ -476,11 +476,12 @@ export default {
       height: 87vh
       width: 50vw
 @media (max-width: 900px)
-  img
-    border-top-left-radius: 0px
-    height: 40rem
-    width: 100%
-    top: 8rem
+  .recipe-container
+    img
+      border-top-left-radius: 0px
+      height: 40rem
+      width: 100%
+      top: 8rem
   .blue-box-next
     display: none
   .blue-arrows

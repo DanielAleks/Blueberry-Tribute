@@ -124,7 +124,7 @@ export default {
   z-index: 1
   outline: none
 .button-left
-  left: 0px
+  left: 0px 
 .button-right
   right: 0px
 
@@ -136,6 +136,7 @@ export default {
     margin-left: 5vw
     margin-right: 5vw
   .desc
+    margin-left: 12vw
     width: 72vw !important
 </style>
 

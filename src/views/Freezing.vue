@@ -6,8 +6,8 @@
       class="freeze-info"
     >
       <img :src="freezeStep.image" alt="image" />
-      <p class="title">{{ freezeStep.title }}</p>
-      <p class="desc">{{ freezeStep.desc }}</p>
+      <p class="freezing-title">{{ freezeStep.title }}</p>
+      <p class="freezing-desc">{{ freezeStep.desc }}</p>
     </div>
 
     <div class="Mfreeze-info">
@@ -18,7 +18,7 @@
           :style="{ transform: `translate(${x}%)` }"
           class="title-desc-container"
         >
-          <p class="title">{{ freezeStep.title }}</p>
+          <p class="freezing-title">{{ freezeStep.title }}</p>
           <p @click="imgHandler(index)" class="desc">{{ freezeStep.desc }}</p>
         </div>
       </div>
@@ -57,7 +57,7 @@ export default {
         if (index === 0) {
           this.x = -60;
         } else if (index === 1) {
-          this.x = -170;
+          this.x = -160;
         } else if (index === 2) {
           this.x = -260;
         }
@@ -106,10 +106,10 @@ export default {
     margin-right: 5vw
     margin-left: 5vw
     font-family: Nunito-regular
-  .desc
+  .freezing-desc
     width: 50%
-    margin-left: 10%
-    margin-right: 10%
+    margin-left: 30rem
+    margin-right: 30rem
   .title-desc-container
     display: flex
     flex-direction: column
