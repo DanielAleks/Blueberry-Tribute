@@ -51,15 +51,15 @@ export default {
   data() {
     return {
       accessor: 0,
-      x: -60,
+      x: -65,
       imgHandler(index) {
         this.accessor = index;
         if (index === 0) {
-          this.x = -60;
+          this.x = -65;
         } else if (index === 1) {
-          this.x = -160;
+          this.x = -165;
         } else if (index === 2) {
-          this.x = -260;
+          this.x = -265;
         }
       },
       freezeSteps: [
@@ -108,8 +108,8 @@ export default {
     font-family: Nunito-regular
   .freezing-desc
     width: 50%
-    margin-left: 30rem
-    margin-right: 30rem
+    margin-left: 25%
+    margin-right: 25%
   .title-desc-container
     display: flex
     flex-direction: column
