@@ -5,7 +5,6 @@
       <router-link class="nav-item" to="/"> Home</router-link> |
       <router-link class="nav-item" to="/recipes"> Recipes</router-link> |
       <router-link class="nav-item" to="/freezing"> Freezing</router-link>
-      >
     </div>
   </div>
 
